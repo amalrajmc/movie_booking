@@ -16,7 +16,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes,{scrollPositionRestoration: 'enabled'})
     ],
     exports: [
         RouterModule
@@ -26,9 +26,14 @@ export class AppRoutingModule {
 
 constructor(router:Router) {
   router.events.forEach((event) => {
-    if(event instanceof RoutesRecognized) {
+    if(event instanceof NavigationEnd) {
       console.log("route",event)
+      window.scrollTo(0, 0)
     }
+    // setTimeout(()=>{
+      
+    // },500)
+   
     // NavigationEnd
     // NavigationCancel
     // NavigationError
