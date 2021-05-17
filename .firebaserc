@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "movie-booking-app-e5f6f"
+  },
+  "targets": {
+    "movie-booking-app-e5f6f": {
+      "hosting": {
+        "movie-booking": [
+          "movie-booking-app-e5f6f"
+        ]
+      }
+    }
+  }
+}
