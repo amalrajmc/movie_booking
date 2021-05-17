@@ -17,13 +17,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./movie-description.component.scss'],
 })
 export class MovieDescriptionComponent implements OnInit {
-  moviesCollection: AngularFirestoreCollection<Movie>;
-  movies: Movie[];
-  movie: Movie;
   id: string;
   bookings:Observable<MovieState>;
 
-  constructor(private Fstore: AngularFirestore, private route: ActivatedRoute,private movieService: MovieService,private store:Store<AppState>) {
+  constructor( private route: ActivatedRoute,private movieService: MovieService,private store:Store<AppState>) {
 
 
   }
@@ -36,12 +33,12 @@ export class MovieDescriptionComponent implements OnInit {
     
   }
   abc() {
-    this.Fstore.collection('movies').doc("three").ref.get()
-    .then((doc) => {
-      if (doc.exists) {
-        this.Fstore.collection('movies').doc("ad_astra").set(doc.data());
+    // this.Fstore.collection('movies').doc("three").ref.get()
+    // .then((doc) => {
+    //   if (doc.exists) {
+    //     this.Fstore.collection('movies').doc("ad_astra").set(doc.data());
 
-      }});
+    //   }});
     //this.Fstore.collection('movies').doc("her").set(data);
     // this.Fstore.collection('movies')
     //   .doc('five')
